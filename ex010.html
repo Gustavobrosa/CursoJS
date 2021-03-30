@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detran</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: rgb(104, 3, 3);
+            color: white;
+            width: 300px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id = "area">
+        Teste de Velocidade
+    </div>
+    <h1>Sistema de Multas</h1>
+    <p>Velocidade limite: <input type="number" name="lim" id="lim">Km/h </p>
+    Velocidade do carro <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id = "res">
+
+    </div>
+    <script>
+        var a = window.document.querySelectorAll('input')[1]
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        function calcular() {
+            var vellim = window.document.querySelector('input#lim')
+            var txtv = window.document.querySelector('input#txtvel')
+            var res = window.document.querySelector('div#res')
+            var velocidadelimite = Number(vellim.value)
+            var vel = Number(txtv.value)
+            res.innerHTML = `<p>Sua velocidade é <strong>${vel}Km/h</strong></p>`
+            if (vel > velocidadelimite) {
+                res.innerHTML += `<p>Você foi <strong>MULTADO</strong> por excesso de velocidade.</p>`
+            }
+            res.innerHTML += `<p>Dirija com segurança!</p>`
+        }
+        function entrar() {
+            a.innerText = 'Entrou!' 
+            a.style.background = 'green'
+        }
+        function sair() {
+            a.innerText = 'Saiu!' 
+            a.style.background = 'yellow'
+        }
+    </script>
+</body>
+</html>

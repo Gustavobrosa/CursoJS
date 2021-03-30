@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Velocidade Media</title>
+    <link rel="stylesheet" href="velmed.css">
+</head>
+<body>
+    <header>
+        <h1>Calcule a Velocidade média</h1>
+    </header>
+    <section>
+        <div id="dados">
+            <p>Digite o espaço percorrido:
+                <input type="number" name="espaco" id="espaco" style="width: 50pt;"> Km
+            </p>
+            <p>Digite o tempo decorrido:
+                <input type="number" name="tempo" id="tempo" style="width: 50pt;"> horas
+            </p>
+            <input type="button" value="Calcular" onclick="calcula()">
+        </div>
+        <div id="res">
+            <p>
+                A velocidade média do percurso foi de... 
+            </p>
+        </div>
+        <div id="conv">
+            <p>
+                <input type="button" value="Converter para m/s" onclick="converterms()">
+                <input type="button" value="Converter para mi/h" onclick="convertermih()">
+                <input type="button" value="Converter para ano-luz" onclick="convanoluz()">
+            </p>
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy;CursoemVídeo</p>
+    </footer>
+    <script src="velmed.js"></script>
+</body>
+</html>
